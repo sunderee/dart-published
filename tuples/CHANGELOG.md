@@ -13,3 +13,8 @@
 ## 0.0.4
 
 - Bump Dart SDK version constraint.
+
+## 0.0.5
+
+- GitHub repository cleanup
+- Regenerate `analysis_options.yaml` file
