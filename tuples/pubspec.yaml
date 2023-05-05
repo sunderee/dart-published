@@ -1,10 +1,10 @@
 name: ktuples
 description: Collection of Kotlin-inspired tuple-like structures, from Pair to Quintuple
-version: 0.0.4
-repository: https://github.com/sunderee/tuples
+version: 0.0.5
+repository: https://github.com/sunderee/dart-published/tree/master/tuples
 
 environment:
-  sdk: ">=2.19.2 <3.0.0"
+  sdk: ">=2.19.6 <4.0.0"
 
 dependencies:
   meta: ^1.8.0

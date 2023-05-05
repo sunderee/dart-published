@@ -1,7 +1,7 @@
 name: nbr
 description: Generic implementation of the network-bound-resource algorithm in Dart
-version: 0.0.4
-repository: https://github.com/sunderee/nbr
+version: 0.0.5
+repository: https://github.com/sunderee/dart-published/tree/master/nbr
 
 environment:
   sdk: ">=2.19.6 <4.0.0"
