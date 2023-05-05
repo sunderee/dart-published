@@ -1,0 +1,13 @@
+# IDEs
+.idea
+.vscode
+
+# Files and directories created by pub.
+.dart_tool/
+.packages
+
+# Conventional directory for build outputs.
+build/
+
+# Lock file
+pubspec.lock
