@@ -144,7 +144,7 @@ analyzer:
     # prefer_constructors_over_static_methods: error
     prefer_contains: error
     # prefer_double_quotes: error
-    # prefer_equal_for_default_values: error
+    prefer_equal_for_default_values: error
     # prefer_expression_function_bodies: error
     prefer_final_fields: error
     # prefer_final_in_for_each: error
@@ -307,7 +307,6 @@ linter:
     # - invalid_case_patterns
 
     # Conditions should not unconditionally evaluate to true or to false.
-    # This rule is deprecated. Do not use it.
     # - invariant_booleans
 
     # Invocation of Iterable.contains with references of unrelated types.
@@ -382,7 +381,6 @@ linter:
     # - avoid_annotating_with_dynamic
 
     # Avoid using as.
-    # This rule is deprecated. Do not use it.
     # - avoid_as
 
     # Avoid bool literals in conditional expressions.
@@ -665,8 +663,7 @@ linter:
     # - prefer_double_quotes
 
     # Use = to separate a named parameter from its default value.
-    # This rule is deprecated. Do not use it.
-    # - prefer_equal_for_default_values
+    - prefer_equal_for_default_values
 
     # Use => for short members whose body is a single return statement.
     # - prefer_expression_function_bodies
@@ -774,7 +771,6 @@ linter:
     # - sort_unnamed_constructors_first
 
     # Place the super call last in a constructor initialization list.
-    # This rule is deprecated. Do not use it.
     # - super_goes_last
 
     # Tighten type of initializing formal.
