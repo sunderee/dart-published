@@ -4,3 +4,6 @@
 
 # macOS
 .DS_Store
+
+# bumpy.sh
+bumpy.sh

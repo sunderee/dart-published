@@ -144,7 +144,7 @@ analyzer:
     # prefer_constructors_over_static_methods: error
     prefer_contains: error
     # prefer_double_quotes: error
-    prefer_equal_for_default_values: error
+    # prefer_equal_for_default_values: error
     # prefer_expression_function_bodies: error
     prefer_final_fields: error
     # prefer_final_in_for_each: error
@@ -663,7 +663,7 @@ linter:
     # - prefer_double_quotes
 
     # Use = to separate a named parameter from its default value.
-    - prefer_equal_for_default_values
+    # - prefer_equal_for_default_values
 
     # Use => for short members whose body is a single return statement.
     # - prefer_expression_function_bodies
@@ -933,4 +933,3 @@ linter:
 
     # Sort pub dependencies alphabetically.
     # - sort_pub_dependencies
-
