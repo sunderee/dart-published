@@ -1,6 +1,6 @@
 /// Wrapper around the result (empty/loading/successful/failed) returned by the
 /// network-bound resource algorithm.
-abstract class Resource<T> {
+sealed class Resource<T> {
   /// Data contained by the resource. It can be null.
   final T? baseData;
 
@@ -27,7 +27,7 @@ abstract class Resource<T> {
 /// resource. It has no additional fields and has a default constructor that
 /// calls the super constructor with null values for [baseData] and
 /// [baseException].
-class Empty<T> extends Resource<T> {
+final class Empty<T> extends Resource<T> {
   const Empty() : super(null, null);
 }
 
@@ -36,7 +36,7 @@ class Empty<T> extends Resource<T> {
 /// represents the data that is being loaded. It has a constructor that takes an
 /// argument [data] and passes it to the super constructor along with `null` for
 /// [baseException].
-class Loading<T> extends Resource<T> {
+final class Loading<T> extends Resource<T> {
   final T? data;
 
   const Loading(this.data) : super(data, null);
@@ -46,7 +46,7 @@ class Loading<T> extends Resource<T> {
 /// successful resource. It has one field, [data], which represents the data of
 /// the resource. It has a constructor that takes an argument [data] and passes
 /// it to the super constructor along with `null` for [baseException].
-class Success<T> extends Resource<T> {
+final class Success<T> extends Resource<T> {
   final T data;
 
   const Success(this.data) : super(data, null);
@@ -57,7 +57,7 @@ class Success<T> extends Resource<T> {
 /// represents the exception that was thrown when the resource failed to load.
 /// It has a constructor that takes an argument [exception] and passes it to the
 /// super constructor along with `null` for [baseData].
-class Failed<T> extends Resource<T> {
+final class Failed<T> extends Resource<T> {
   final Exception exception;
 
   const Failed(this.exception) : super(null, exception);

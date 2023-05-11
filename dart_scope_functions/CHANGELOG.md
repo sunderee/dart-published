@@ -22,3 +22,7 @@
 
 - GitHub repository cleanup
 - Regenerate `analysis_options.yaml` file
+
+## 0.0.7
+
+- Dart 3 ready: new `analysis_options.yaml` file + bumped Dart SDK constraints
