@@ -7,7 +7,8 @@ environment:
   sdk: ">=3.0.0-417.4.beta"
 
 dependencies:
-  # path: ^1.8.0
+  dart_scope_functions: ^0.0.6
+  meta: ^1.9.1
 
 dev_dependencies:
   lints: ^2.0.1

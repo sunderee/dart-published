@@ -7,8 +7,7 @@ import 'package:meta/meta.dart';
 /// A class representing a pair of values, which are immutable and extend the
 /// [Equatable] class.
 @immutable
-@sealed
-class Pair<A, B> extends Equatable {
+final class Pair<A, B> extends Equatable {
   /// The first value in the pair.
   final A first;
 
@@ -32,8 +31,7 @@ class Pair<A, B> extends Equatable {
 /// A class representing a triple of values, which are immutable and extend the
 /// [Equatable] class.
 @immutable
-@sealed
-class Triple<A, B, C> extends Equatable {
+final class Triple<A, B, C> extends Equatable {
   /// The first value in the triple.
   final A first;
 
@@ -61,8 +59,7 @@ class Triple<A, B, C> extends Equatable {
 /// A class representing a quadruple of values, which are immutable and extend
 /// the [Equatable] class.
 @immutable
-@sealed
-class Quadruple<A, B, C, D> extends Equatable {
+final class Quadruple<A, B, C, D> extends Equatable {
   /// The first value in the quadruple.
   final A first;
 
@@ -94,8 +91,7 @@ class Quadruple<A, B, C, D> extends Equatable {
 /// A class representing a quintuple of values, which are immutable and extend
 /// the [Equatable] class.
 @immutable
-@sealed
-class Quintuple<A, B, C, D, E> extends Equatable {
+final class Quintuple<A, B, C, D, E> extends Equatable {
   /// The first value in the quintuple.
   final A first;
 
