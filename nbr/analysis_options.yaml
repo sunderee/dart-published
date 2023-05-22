@@ -144,7 +144,6 @@ analyzer:
     # prefer_constructors_over_static_methods: error
     prefer_contains: error
     # prefer_double_quotes: error
-    # prefer_equal_for_default_values: error
     # prefer_expression_function_bodies: error
     prefer_final_fields: error
     # prefer_final_in_for_each: error
@@ -273,7 +272,6 @@ linter:
     # - close_sinks
 
     # Invocation of various collection methods with arguments of unrelated types.
-    # This rule is experimental. Use at your own risk.
     # - collection_methods_unrelated_type
 
     # Only reference in scope identifiers in doc comments.
@@ -283,7 +281,6 @@ linter:
     - control_flow_in_finally
 
     # Avoid using deprecated elements from within the package in which they are declared.
-    # This rule is experimental. Use at your own risk.
     # - deprecated_member_use_from_same_package
 
     # DO reference all public properties in debug methods.
@@ -490,7 +487,6 @@ linter:
     # - cast_nullable_to_non_nullable
 
     # Sort combinator names alphabetically.
-    # This rule is experimental. Use at your own risk.
     # - combinators_ordering
 
     # Missing conditional import.
@@ -503,7 +499,6 @@ linter:
     - curly_braces_in_flow_control_structures
 
     # Attach library doc comments to library directives.
-    # This rule is experimental. Use at your own risk.
     # - dangling_library_doc_comments
 
     # Missing deprecated annotation.
@@ -522,7 +517,6 @@ linter:
     - empty_constructor_bodies
 
     # Do use sound null safety.
-    # This rule is experimental. Use at your own risk.
     # - enable_null_safety
 
     # Put a single newline at end of file.
@@ -541,7 +535,6 @@ linter:
     - implementation_imports
 
     # Explicitly tear-off call methods when using an object as a Function.
-    # This rule is experimental. Use at your own risk.
     # - implicit_call_tearoffs
 
     # Join return statement with assignment when possible.
@@ -551,7 +544,6 @@ linter:
     # - leading_newlines_in_multiline_strings
 
     # Attach library annotations to library directives.
-    # This rule is experimental. Use at your own risk.
     # - library_annotations
 
     # Name libraries using lowercase_with_underscores.
@@ -661,9 +653,6 @@ linter:
 
     # Prefer double quotes where they won’t require escape sequences.
     # - prefer_double_quotes
-
-    # Use = to separate a named parameter from its default value.
-    # - prefer_equal_for_default_values
 
     # Use => for short members whose body is a single return statement.
     # - prefer_expression_function_bodies
@@ -783,7 +772,6 @@ linter:
     - type_init_formals
 
     # Don’t use constant patterns with type literals.
-    # This rule is experimental. Use at your own risk.
     # - type_literal_in_constant_pattern
 
     # Future results in async function bodies must be awaited or marked unawaited using dart:async.
@@ -796,7 +784,6 @@ linter:
     - unnecessary_brace_in_string_interps
 
     # Don’t use explicit breaks when a break is implied.
-    # This rule is experimental. Use at your own risk.
     # - unnecessary_breaks
 
     # Avoid const keyword.
@@ -818,7 +805,6 @@ linter:
     - unnecessary_late
 
     # Avoid library directives unless they have documentation comments or annotations.
-    # This rule is experimental. Use at your own risk.
     # - unnecessary_library_directive
 
     # Unnecessary new keyword.
@@ -906,7 +892,6 @@ linter:
     # - use_string_buffers
 
     # Use string in part of directives.
-    # This rule is experimental. Use at your own risk.
     # - use_string_in_part_of_directives
 
     # Use super-initializer parameters where possible.

@@ -26,3 +26,7 @@
 ## 0.0.7
 
 - Dart 3 ready: new `analysis_options.yaml` file + bumped Dart SDK constraints
+
+## 0.0.8
+
+- Update `analysis_options.yaml` file.
