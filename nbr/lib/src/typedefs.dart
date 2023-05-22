@@ -13,7 +13,7 @@ typedef StoreToDBCallback<Entity> = FutureOr<void> Function(Entity data);
 
 /// Defines a callback that determines whether data should be fetched from the
 /// API or not. Returns a boolean value.
-typedef ShouldFetchCallback<Entity> = bool Function(Entity? entity);
+typedef ShouldFetchCallback<Entity> = FutureOr<bool> Function(Entity? entity);
 
 /// Defines a callback that maps a DTO to an entity.
 typedef MapDTOToEntity<DTO, Entity> = Entity Function(DTO dto);

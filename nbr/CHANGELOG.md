@@ -26,3 +26,7 @@
 ## 1.0.2
 
 - Update `analysis_options.yaml` file.
+
+## 1.0.3
+
+- `shouldFetch` callback has a different signature, it's now defined as `typedef ShouldFetchCallback<Entity> = FutureOr<bool> Function(Entity? entity)` instead of `typedef ShouldFetchCallback<Entity> = bool Function(Entity? entity)`

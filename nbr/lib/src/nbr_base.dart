@@ -41,7 +41,7 @@ abstract class NetworkBoundResource {
     yield* _emit(Resource.loading(null));
     final data = await loadFromDB();
 
-    if (shouldFetch(data)) {
+    if (await shouldFetch(data)) {
       yield* _emit(Resource.loading(data));
       try {
         final dto = await fetchFromAPI();
