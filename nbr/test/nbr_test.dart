@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
@@ -5,36 +6,40 @@ import 'package:nbr/nbr.dart';
 import 'package:test/test.dart';
 
 void main() {
-  final repository = _SampleRepository();
+  final repository = SampleRepository();
 
-  group('NetworkBoundResource', () {
-    test('should collect values', () async {
-      final streamValues =
-          await repository.fetchPackageDependencies('get_it').toList();
-      for (var element in streamValues) {
-        print('Type: ${element.runtimeType}');
-        print('Data: ${element.baseData}, exception: ${element.baseException}');
-        print('---\n');
-      }
+  tearDown(() => repository.dispose());
 
-      expect(streamValues.length, 3);
-      expect(streamValues.first is Loading, true);
-      expect(streamValues.last is Success, true);
-      expect(streamValues.last.baseData?.value.isNotEmpty, true);
-    });
+  test('should work', () async {
+    await repository.fetchPackageDependencies('nbr');
+
+    expectLater(
+      repository.stream,
+      emitsAnyOf([
+        const Resource<MapEntry<String, List<String>>>.loading(),
+        const Resource<MapEntry<String, List<String>>>.success(
+          MapEntry(
+            'nbr',
+            ['1.0.3', ' 1.0.2', '1.0.1', '1.0.0', '0.0.3', ' 0.0.2', '0.0.1'],
+          ),
+        ),
+      ]),
+    );
+    repository.dispose();
   });
 }
 
-class _SampleRepository extends NetworkBoundResource {
+class SampleRepository
+    extends NetworkBoundResource<MapEntry<String, List<String>>> {
   final Map<String, List<String>> _mockDB = {};
   final HttpClient _client = HttpClient();
 
-  Stream<Resource<MapEntry<String, List<String>>>> fetchPackageDependencies(
+  Future<void> fetchPackageDependencies(
     String package,
-  ) async* {
-    yield* fetch<MapEntry<String, List<String>>, List<String>>(
+  ) async {
+    await fetch<List<String>>(
       fetchFromAPI: () async => await _fetchDependencies(package),
-      loadFromDB: () {
+      loadFromDB: () async {
         final versions = _mockDB[package];
         return versions != null ? MapEntry(package, versions) : null;
       },
@@ -54,7 +59,7 @@ class _SampleRepository extends NetworkBoundResource {
     }
 
     final body = await response
-        .transform(Utf8Decoder(allowMalformed: true))
+        .transform(const Utf8Decoder(allowMalformed: true))
         .reduce((previous, element) => previous + element);
     return ((json.decode(body) as Map<String, dynamic>)['versions']
             as List<dynamic>)

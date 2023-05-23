@@ -1,64 +1,59 @@
-/// Wrapper around the result (empty/loading/successful/failed) returned by the
-/// network-bound resource algorithm.
-sealed class Resource<T> {
-  /// Data contained by the resource. It can be null.
-  final T? baseData;
+import 'package:equatable/equatable.dart';
+import 'package:meta/meta.dart';
 
-  /// Exception which might be thrown in case of a failure.
-  final Exception? baseException;
+/// Enum representing different states in which a resource can be in.
+enum ResourceStatus { empty, loading, success, failed }
 
-  /// Default constructor.
-  const Resource(this.baseData, this.baseException);
+/// Immutable class representing a resource that can be in one of four states:
+/// `empty`, `loading`, `success`, or `failed`. It is designed to help manage
+/// and represent the state of a resource in a clean and consistent way.
+@immutable
+final class Resource<T> extends Equatable {
+  /// The status of the resource.
+  final ResourceStatus status;
 
-  /// Construct the [Empty] concrete class.
-  const factory Resource.empty() = Empty;
-
-  /// Construct the [Loading] concrete class with nullable [data].
-  const factory Resource.loading(T? data) = Loading;
-
-  /// Construct the [Success] concrete class with [data].
-  const factory Resource.success(T data) = Success;
-
-  /// Construct the [Failed] concrete class with [exception].
-  const factory Resource.failed(Exception exception) = Failed;
-}
-
-/// [Empty] is a concrete class that extends [Resource] and represents an empty
-/// resource. It has no additional fields and has a default constructor that
-/// calls the super constructor with null values for [baseData] and
-/// [baseException].
-final class Empty<T> extends Resource<T> {
-  const Empty() : super(null, null);
-}
-
-/// [Loading] is a concrete class that extends [Resource] and represents a
-/// resource that is currently being loaded. It has one field, [data], which
-/// represents the data that is being loaded. It has a constructor that takes an
-/// argument [data] and passes it to the super constructor along with `null` for
-/// [baseException].
-final class Loading<T> extends Resource<T> {
+  /// The data associated with the resource, if it is in the success state.
+  /// It will be `null` if the resource is in any state other than success.
   final T? data;
 
-  const Loading(this.data) : super(data, null);
-}
+  /// The exception associated with the resource, if it is in the failed state.
+  /// It will be `null` if the resource is in any state other than failed.
+  final Object? exception;
 
-/// [Success] is a concrete class that extends [Resource] and represents a
-/// successful resource. It has one field, [data], which represents the data of
-/// the resource. It has a constructor that takes an argument [data] and passes
-/// it to the super constructor along with `null` for [baseException].
-final class Success<T> extends Resource<T> {
-  final T data;
+  // Private constructor used by named constructors.
+  const Resource._({
+    required this.status,
+    this.data,
+    this.exception,
+  });
 
-  const Success(this.data) : super(data, null);
-}
+  /// Named constructor for creating an empty resource.
+  const Resource.empty() : this._(status: ResourceStatus.empty);
 
-/// [Failed] is a concrete class that extends [Resource] and represents a
-/// resource that has failed to load. It has one field, [exception], which
-/// represents the exception that was thrown when the resource failed to load.
-/// It has a constructor that takes an argument [exception] and passes it to the
-/// super constructor along with `null` for [baseData].
-final class Failed<T> extends Resource<T> {
-  final Exception exception;
+  /// Named constructor for creating a loading resource. Takes the nullable
+  /// [data] which may or may not be associated with the resource
+  const Resource.loading([T? data])
+      : this._(
+          status: ResourceStatus.loading,
+          data: data,
+        );
 
-  const Failed(this.exception) : super(null, exception);
+  /// Named constructor for creating a success resource. Takes the [data]
+  /// associated with the resource.
+  const Resource.success(T data)
+      : this._(
+          status: ResourceStatus.success,
+          data: data,
+        );
+
+  /// Named constructor for creating a failed resource. Takes the [exception]
+  /// associated with the resource.
+  const Resource.failed(Object exception)
+      : this._(
+          status: ResourceStatus.failed,
+          exception: exception,
+        );
+
+  @override
+  List<Object?> get props => [status, data, exception];
 }

@@ -3,64 +3,58 @@ import 'dart:async';
 import 'package:nbr/src/resource.dart';
 import 'package:nbr/src/typedefs.dart';
 
-/// Abstract base class that your code needs to extend. It defines a single
-/// abstract method [fetch].
-abstract class NetworkBoundResource {
-  /// Generator method that returns a stream of [Resource] objects. It takes
-  /// five required arguments:
+/// Abstract class representing a resource that is bound to a network request.
+/// It uses a [StreamController] to emit a stream of [Resource] objects,
+/// representing the current state of the resource (`loading`, `success`,
+/// `failed`, or `empty`).
+abstract class NetworkBoundResource<Entity> {
+  // The StreamController used to manage the stream of Resource objects.
+  final _controller = StreamController<Resource<Entity>>();
+
+  /// Getter for the stream of Resource objects.
+  Stream<Resource<Entity>> get stream => _controller.stream;
+
+  /// Method to fetch the resource from the network and emit [Resource] objects
+  /// representing the current state of the resource.
   ///
-  /// - [fetchFromAPI]: A callback that fetches data from an API and returns a
-  /// future or the data transfer object (DTO).
-  /// - [loadFromDB]: A callback that loads data from a database and returns a
-  /// future or the entity.
-  /// - [storeToDB]: A callback that stores data to a database and returns a
-  /// future.
-  /// - [shouldFetch]: A callback that determines whether data should be fetched
-  /// from the API or not. Returns a boolean value.
-  /// - [mapDTOToEntity]: A callback that maps a DTO to an entity.
-  ///
-  /// [fetch] begins by yielding a `Resource.loading(null)` object and then
-  /// waits for the result of `loadFromDB()`. If `shouldFetch(data)` returns
-  /// `true`, it yields a `Resource.loading(data)` object and tries to fetch
-  /// data from the API using `fetchFromAPI()`. If the fetch is successful, it
-  /// maps the DTO to an entity using `mapDTOToEntity(dto)`, stores the entity
-  /// in the database using `storeToDB(entity)`, and yields a
-  /// `Resource.success(entity)` object. If the [fetch] throws an exception, it
-  /// catches the exception and yields a `Resource.failed(exception)` object.
-  ///
-  /// If `shouldFetch(data)` returns `false`, the [fetch] checks if `data` is
-  /// null. If it is null, it yields a `Resource.empty()` object. If it is not
-  /// null, it yields a `Resource.success(data)` object.
-  Stream<Resource<Entity>> fetch<Entity, DTO>({
+  /// This method takes several callbacks as arguments, which are used to fetch
+  /// the resource from the API, load it from the database, store it to the
+  /// database, determine if it should be fetched from the API, and map it from
+  /// a DTO to an entity.
+  Future<void> fetch<DTO>({
     required FetchFromApiCallback<DTO> fetchFromAPI,
     required LoadFromDBCallback<Entity> loadFromDB,
     required StoreToDBCallback<Entity> storeToDB,
     required ShouldFetchCallback<Entity> shouldFetch,
     required MapDTOToEntity<DTO, Entity> mapDTOToEntity,
-  }) async* {
-    yield* _emit(Resource.loading(null));
+  }) async {
+    _controller.add(Resource<Entity>.loading());
     final data = await loadFromDB();
 
     if (await shouldFetch(data)) {
-      yield* _emit(Resource.loading(data));
+      _controller.add(Resource<Entity>.loading(data));
       try {
         final dto = await fetchFromAPI();
         final entity = mapDTOToEntity(dto);
 
         await storeToDB(entity);
 
-        yield* _emit(Resource.success(entity));
-      } on Exception catch (exception) {
-        yield* _emit(Resource.failed(exception));
+        _controller.add(Resource<Entity>.success(entity));
+      } catch (exception) {
+        _controller.add(Resource<Entity>.failed(exception));
       }
     } else {
       if (data != null) {
-        yield* _emit(Resource.success(data));
+        _controller.add(Resource<Entity>.success(data));
       } else {
-        yield* _emit(Resource.empty());
+        _controller.add(Resource<Entity>.empty());
       }
     }
   }
 
-  Stream<T> _emit<T>(T data) => Stream.value(data);
+  /// Method to dispose of the [NetworkBoundResource] by closing the
+  /// [StreamController].
+  void dispose() {
+    _controller.close();
+  }
 }

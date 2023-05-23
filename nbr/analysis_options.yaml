@@ -137,10 +137,10 @@ analyzer:
     # prefer_bool_in_asserts: error
     prefer_collection_literals: error
     prefer_conditional_assignment: error
-    # prefer_const_constructors: error
-    # prefer_const_constructors_in_immutables: error
-    # prefer_const_declarations: error
-    # prefer_const_literals_to_create_immutables: error
+    prefer_const_constructors: error
+    prefer_const_constructors_in_immutables: error
+    prefer_const_declarations: error
+    prefer_const_literals_to_create_immutables: error
     # prefer_constructors_over_static_methods: error
     prefer_contains: error
     # prefer_double_quotes: error
@@ -634,16 +634,16 @@ linter:
     - prefer_conditional_assignment
 
     # Prefer const with constant constructors.
-    # - prefer_const_constructors
+    - prefer_const_constructors
 
     # Prefer declaring const constructors on @immutable classes.
-    # - prefer_const_constructors_in_immutables
+    - prefer_const_constructors_in_immutables
 
     # Prefer const over final for declarations.
-    # - prefer_const_declarations
+    - prefer_const_declarations
 
     # Prefer const literals as parameters of constructors on @immutable classes.
-    # - prefer_const_literals_to_create_immutables
+    - prefer_const_literals_to_create_immutables
 
     # Prefer defining constructors instead of static methods to create instances.
     # - prefer_constructors_over_static_methods

@@ -3,16 +3,17 @@ import 'dart:io';
 
 import 'package:nbr/nbr.dart';
 
-class SampleRepository extends NetworkBoundResource {
+class SampleRepository
+    extends NetworkBoundResource<MapEntry<String, List<String>>> {
   final Map<String, List<String>> _mockDB = {};
   final HttpClient _client = HttpClient();
 
-  Stream<Resource<MapEntry<String, List<String>>>> fetchPackageDependencies(
+  Future<void> fetchPackageDependencies(
     String package,
-  ) async* {
-    yield* fetch<MapEntry<String, List<String>>, List<String>>(
+  ) async {
+    await fetch<List<String>>(
       fetchFromAPI: () async => await _fetchDependencies(package),
-      loadFromDB: () {
+      loadFromDB: () async {
         final versions = _mockDB[package];
         return versions != null ? MapEntry(package, versions) : null;
       },
@@ -32,7 +33,7 @@ class SampleRepository extends NetworkBoundResource {
     }
 
     final body = await response
-        .transform(Utf8Decoder(allowMalformed: true))
+        .transform(const Utf8Decoder(allowMalformed: true))
         .reduce((previous, element) => previous + element);
     return ((json.decode(body) as Map<String, dynamic>)['versions']
             as List<dynamic>)

@@ -30,3 +30,23 @@
 ## 1.0.3
 
 - `shouldFetch` callback has a different signature, it's now defined as `typedef ShouldFetchCallback<Entity> = FutureOr<bool> Function(Entity? entity)` instead of `typedef ShouldFetchCallback<Entity> = bool Function(Entity? entity)`
+
+## 2.0.0
+
+- This version contains **breaking changes**.
+- `NetworkBoundResource`
+  - Added
+    - Implemented use of a `StreamController` to manage the stream of `Resource` objects emitted by the `NetworkBoundResource`. The stream can be accessed via a `stream` getter.
+    - Added a `dispose` method to close the `StreamController` when the `NetworkBoundResource` is no longer needed.
+  - Changed
+    - Modified the `fetch` method to use the `StreamController` to emit `Resource` objects representing the current state of the resource.
+    - Updated exception handling in the `fetch` method to emit a `Resource.failed` object with the caught exception.
+- `Resource`
+  - Added
+    - Added a `ResourceStatus` enum to represent the different states a resource can be in.
+    - Added `status` field to `Resource` to indicate the current state of the resource.
+    - Added `exception` field to `Resource` to hold an exception if the resource is in the `failed` state.
+  - Changed
+    - Made `Resource` an immutable class.
+    - Replaced separate subclasses for each resource state (empty, loading, success, failed) with named constructors in the `Resource` class itself.
+    - Renamed `baseData` to `data` and `baseException` to `exception` for clarity.
