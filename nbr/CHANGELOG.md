@@ -50,3 +50,8 @@
     - Made `Resource` an immutable class.
     - Replaced separate subclasses for each resource state (empty, loading, success, failed) with named constructors in the `Resource` class itself.
     - Renamed `baseData` to `data` and `baseException` to `exception` for clarity.
+
+## 2.0.1
+
+- Bump Dart SDK constraint and update `test` dependency version.
+- Updates to the documentation.
