@@ -55,3 +55,8 @@
 
 - Bump Dart SDK constraint and update `test` dependency version.
 - Updates to the documentation.
+
+## 2.0.2
+
+- Minor fixes related to the stream getter potentially causing `Bad state: Stream has already been listened to`.
+- Bump minimum Dart SDK version
