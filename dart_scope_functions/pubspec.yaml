@@ -1,6 +1,6 @@
 name: dart_scope_functions
 description: Kotlin-inspired scope functions implemented in Dart with the goal of executing a block of code within the context of an object
-version: 0.0.8
+version: 0.1.0
 repository: https://github.com/sunderee/dart-published/tree/master/dart_scope_functions
 
 environment:
