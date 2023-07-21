@@ -60,3 +60,7 @@
 
 - Minor fixes related to the stream getter potentially causing `Bad state: Stream has already been listened to`.
 - Bump minimum Dart SDK version
+
+## 2.0.3
+
+- Bump Dart SDK version constraint.

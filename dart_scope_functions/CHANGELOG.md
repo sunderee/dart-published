@@ -30,3 +30,7 @@
 ## 0.0.8
 
 - Update `analysis_options.yaml` file.
+
+## 0.1.0
+
+- Bump Dart SDK version constraint.
