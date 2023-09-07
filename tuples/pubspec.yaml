@@ -4,10 +4,10 @@ version: 0.0.8
 repository: https://github.com/sunderee/dart-published/tree/master/tuples
 
 environment:
-  sdk: ">=3.0.6 <4.0.0"
+  sdk: ">=3.1.0"
 
 dependencies:
-  meta: ^1.9.1
+  meta: ^1.10.0
   equatable: ^2.0.5
 
 dev_dependencies:
