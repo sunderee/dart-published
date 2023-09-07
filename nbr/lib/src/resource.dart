@@ -1,5 +1,5 @@
-import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
+import 'package:nbr/src/equatable.dart';
 
 /// Enum representing different states in which a resource can be in.
 enum ResourceStatus { empty, loading, success, failed }
