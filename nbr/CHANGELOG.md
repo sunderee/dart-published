@@ -64,3 +64,9 @@
 ## 2.0.3
 
 - Bump Dart SDK version constraint.
+
+## 2.0.4
+
+- Bump SDK version constraint
+- Bump dependencies to latest
+- Add topics to `pubspec.yaml`
