@@ -1,7 +1,7 @@
 /// Collection of Kotlin-inspired named tuples (from Pair to Sextuple).
 library ktuples;
 
-import 'package:equatable/equatable.dart';
+import 'package:ktuples/equatable.dart';
 import 'package:meta/meta.dart';
 
 /// A class representing a pair of values, which are immutable and extend the
@@ -23,9 +23,6 @@ final class Pair<A, B> extends Equatable {
     this.first,
     this.second,
   );
-
-  @override
-  String toString() => '$runtimeType: ${props.join(', ')}';
 }
 
 /// A class representing a triple of values, which are immutable and extend the
@@ -51,9 +48,6 @@ final class Triple<A, B, C> extends Equatable {
     this.second,
     this.third,
   );
-
-  @override
-  String toString() => '$runtimeType: ${props.join(', ')}';
 }
 
 /// A class representing a quadruple of values, which are immutable and extend
@@ -83,9 +77,6 @@ final class Quadruple<A, B, C, D> extends Equatable {
     this.third,
     this.fourth,
   );
-
-  @override
-  String toString() => '$runtimeType: ${props.join(', ')}';
 }
 
 /// A class representing a quintuple of values, which are immutable and extend
@@ -119,7 +110,4 @@ final class Quintuple<A, B, C, D, E> extends Equatable {
     this.fourth,
     this.fifth,
   );
-
-  @override
-  String toString() => '$runtimeType: ${props.join(', ')}';
 }
