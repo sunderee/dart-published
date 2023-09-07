@@ -1,5 +1,4 @@
 import 'package:dart_ms/dart_ms.dart';
-import 'package:dart_scope_functions/dart_scope_functions.dart';
 
 void main() {
   ms('2 days').also((it) => print(it)); // 172800000
@@ -12,4 +11,11 @@ void main() {
   ms('1y').also((it) => print(it)); // 31557600000
   ms('-3 days').also((it) => print(it)); // -259200000
   ms('-1h').also((it) => print(it)); // -3600000
+}
+
+extension _ScopeFunctionExt<T> on T {
+  T also(void Function(T it) block) {
+    block.call(this);
+    return this;
+  }
 }
