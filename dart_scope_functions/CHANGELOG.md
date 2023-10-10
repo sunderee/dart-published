@@ -40,3 +40,9 @@
 - Bump SDK version constraint
 - Bump dependencies to latest
 - Add topics to `pubspec.yaml`
+
+## 0.1.2
+
+- Bump SDK version constraint
+- Bump dependencies to latest
+- Create a new extension method `letWithElse` that can be used on nullable types.

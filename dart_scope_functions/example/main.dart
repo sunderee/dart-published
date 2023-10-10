@@ -8,10 +8,13 @@ void main() {
   });
   print(listAlso); // [one, two, three, four]
 
-  // Usage of `let`
+  // Usage of `let` and `letWithElse`
   final listLet = [null, 1, 2, null, 3, null];
   print(listLet.elementAt(0)?.let((it) => it.toDouble())); // null
   print(listLet.elementAt(2)?.let((it) => it.toDouble())); // 2.0
+  print(listLet
+      .elementAt(0)
+      .letWithElse((it) => it.toDouble(), orElse: 0.0)); // 0.0
 
   // Usage of `run`
   final hexNumberRegex = run(() {
