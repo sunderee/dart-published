@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:nbr/src/resource.dart';
-import 'package:nbr/src/typedefs.dart';
 
 /// Abstract class representing a resource that is bound to a network request.
 /// It uses a [StreamController] to emit a stream of [Resource] objects,
@@ -25,11 +24,11 @@ abstract class NetworkBoundResource<Entity> {
   /// database, determine if it should be fetched from the API, and map it from
   /// a DTO to an entity.
   Future<void> fetch<DTO>({
-    required FetchFromApiCallback<DTO> fetchFromAPI,
-    required LoadFromDBCallback<Entity> loadFromDB,
-    required StoreToDBCallback<Entity> storeToDB,
-    required ShouldFetchCallback<Entity> shouldFetch,
-    required MapDTOToEntity<DTO, Entity> mapDTOToEntity,
+    required FutureOr<DTO> Function() fetchFromAPI,
+    required FutureOr<Entity?> Function() loadFromDB,
+    required FutureOr<void> Function(Entity data) storeToDB,
+    required FutureOr<bool> Function(Entity? entity) shouldFetch,
+    required Entity Function(DTO dto) mapDTOToEntity,
   }) async {
     _controller?.add(Resource<Entity>.loading());
     final data = await loadFromDB();
