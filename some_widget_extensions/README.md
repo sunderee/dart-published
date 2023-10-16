@@ -1,6 +1,6 @@
 # Some Widget Extensions
 
-_Some Widget Extensions_ is a collection of convenience extension methods to be used on widgets. It conserves Flutter's API making it as familiar as possible.
+_Some Widget Extensions_ is a collection of convenience extensions to be used on widgets. It conserves Flutter's API making it as familiar as possible.
 
 ## Inspiration
 
