@@ -38,6 +38,13 @@ extension ScopeFunctionNullableExt<T> on T? {
   R letWithElse<R>(R Function(T it) block, {required R orElse}) {
     return this?.let((innerIt) => block.call(innerIt)) ?? orElse;
   }
+
+  /// This extension is used to prevent using `??` (null-coalescing operator)
+  /// in favor of a more functional approach. In case the provided value of type
+  /// [T] is null, it will return provided [defaultValue].
+  T withDefault(T defaultValue) {
+    return this ?? defaultValue;
+  }
 }
 
 /// Calls the specified function [block] and returns its result.

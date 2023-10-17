@@ -31,4 +31,9 @@ void main() {
   final evenOrNull = number.takeIf((it) => it % 2 == 0);
   final oddOrNull = number.takeUnless((it) => it % 2 == 0);
   print("even: $evenOrNull, odd: $oddOrNull"); // even: 94, odd: null
+
+  // Usage of `withDefault`
+  final double? nullableNumber = null;
+  final defaultOfNullableNumber = nullableNumber.withDefault(123.45);
+  print('default value: $defaultOfNullableNumber');
 }
