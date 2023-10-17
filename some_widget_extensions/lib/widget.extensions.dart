@@ -3,6 +3,33 @@ import 'package:flutter/material.dart';
 
 /// Collection of extensions on Material [Widget].
 extension WidgetExtensions on Widget {
+  /// Wrap a widget in [Card].
+  Card card({
+    Key? key,
+    Color? color,
+    Color? shadowColor,
+    Color? surfaceTintColor,
+    double? elevation,
+    ShapeBorder? shape,
+    bool borderOnForeground = true,
+    EdgeInsetsGeometry? margin,
+    Clip? clipBehavior,
+    bool semanticContainer = true,
+  }) {
+    return Card(
+      key: key,
+      color: color,
+      shadowColor: shadowColor,
+      surfaceTintColor: surfaceTintColor,
+      elevation: elevation,
+      shape: shape,
+      borderOnForeground: borderOnForeground,
+      margin: margin,
+      clipBehavior: clipBehavior,
+      child: this,
+    );
+  }
+
   /// Wrap a widget in [SafeArea].
   SafeArea safeArea({
     Key? key,
