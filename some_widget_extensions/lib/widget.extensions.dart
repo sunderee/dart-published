@@ -95,4 +95,130 @@ extension WidgetExtensions on Widget {
       child: this,
     );
   }
+
+  /// Wrap a widget in [ClipRect].
+  ClipRect clipRect({
+    Key? key,
+    CustomClipper<Rect>? clipper,
+    Clip clipBehavior = Clip.hardEdge,
+  }) {
+    return ClipRect(
+      key: key,
+      clipper: clipper,
+      clipBehavior: clipBehavior,
+      child: this,
+    );
+  }
+
+  /// Wrap a widget in [ClipRRect].
+  ClipRRect clipRRect({
+    Key? key,
+    BorderRadiusGeometry borderRadius = BorderRadius.zero,
+    CustomClipper<RRect>? clipper,
+    Clip clipBehavior = Clip.antiAlias,
+  }) {
+    return ClipRRect(
+      key: key,
+      borderRadius: borderRadius,
+      clipper: clipper,
+      clipBehavior: clipBehavior,
+      child: this,
+    );
+  }
+
+  /// Wrap a widget in [ClipOval].
+  ClipOval clipOval({
+    Key? key,
+    CustomClipper<Rect>? clipper,
+    Clip clipBehavior = Clip.antiAlias,
+  }) {
+    return ClipOval(
+      key: key,
+      clipper: clipper,
+      clipBehavior: clipBehavior,
+      child: this,
+    );
+  }
+
+  /// Wrap a widget in [ClipPath].
+  ClipPath clipPath({
+    Key? key,
+    CustomClipper<Path>? clipper,
+    Clip clipBehavior = Clip.antiAlias,
+  }) {
+    return ClipPath(
+      key: key,
+      clipper: clipper,
+      clipBehavior: clipBehavior,
+      child: this,
+    );
+  }
+
+  /// Wrap a widget in [InkWell].
+  InkWell inkWell({
+    Key? key,
+    void Function()? onTap,
+    void Function()? onDoubleTap,
+    void Function()? onLongPress,
+    void Function(TapDownDetails)? onTapDown,
+    void Function(TapUpDetails)? onTapUp,
+    void Function()? onTapCancel,
+    void Function()? onSecondaryTap,
+    void Function(TapUpDetails)? onSecondaryTapUp,
+    void Function(TapDownDetails)? onSecondaryTapDown,
+    void Function()? onSecondaryTapCancel,
+    void Function(bool)? onHighlightChanged,
+    void Function(bool)? onHover,
+    MouseCursor? mouseCursor,
+    Color? focusColor,
+    Color? hoverColor,
+    Color? highlightColor,
+    MaterialStateProperty<Color?>? overlayColor,
+    Color? splashColor,
+    InteractiveInkFeatureFactory? splashFactory,
+    double? radius,
+    BorderRadius? borderRadius,
+    ShapeBorder? customBorder,
+    bool? enableFeedback = true,
+    bool excludeFromSemantics = false,
+    FocusNode? focusNode,
+    bool canRequestFocus = true,
+    void Function(bool)? onFocusChange,
+    bool autofocus = false,
+    MaterialStatesController? statesController,
+  }) {
+    return InkWell(
+      key: key,
+      onTap: onTap,
+      onDoubleTap: onDoubleTap,
+      onLongPress: onLongPress,
+      onTapDown: onTapDown,
+      onTapUp: onTapUp,
+      onTapCancel: onTapCancel,
+      onSecondaryTap: onSecondaryTap,
+      onSecondaryTapUp: onSecondaryTapUp,
+      onSecondaryTapDown: onSecondaryTapDown,
+      onSecondaryTapCancel: onSecondaryTapCancel,
+      onHighlightChanged: onHighlightChanged,
+      onHover: onHover,
+      mouseCursor: mouseCursor,
+      focusColor: focusColor,
+      hoverColor: hoverColor,
+      highlightColor: highlightColor,
+      overlayColor: overlayColor,
+      splashColor: splashColor,
+      splashFactory: splashFactory,
+      radius: radius,
+      borderRadius: borderRadius,
+      customBorder: customBorder,
+      enableFeedback: enableFeedback,
+      excludeFromSemantics: excludeFromSemantics,
+      focusNode: focusNode,
+      canRequestFocus: canRequestFocus,
+      onFocusChange: onFocusChange,
+      autofocus: autofocus,
+      statesController: statesController,
+      child: this,
+    );
+  }
 }

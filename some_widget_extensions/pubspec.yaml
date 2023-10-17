@@ -1,6 +1,6 @@
 name: some_widget_extensions
 description: Collection of convenience extensions to be used on widgets. It conserves Flutter's API making it as familiar as possible.
-version: 0.0.2
+version: 0.0.3
 repository: https://github.com/sunderee/dart-published/tree/master/some_widget_extensions
 
 environment:

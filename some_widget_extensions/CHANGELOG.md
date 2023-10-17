@@ -6,3 +6,8 @@
 
 - Update `pubspec.yaml` description section.
 - Update `README.md`.
+
+## 0.0.3
+
+- Add `ClipRect`, `ClipRRect`, `ClipOval`, `ClipPath` extensions.
+- Add `InkWell` extension.
