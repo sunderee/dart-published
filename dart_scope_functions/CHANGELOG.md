@@ -46,3 +46,7 @@
 - Bump SDK version constraint
 - Bump dependencies to latest
 - Create a new extension method `letWithElse` that can be used on nullable types.
+
+## 0.1.3
+
+- Create a new extension method `withDefault`.
