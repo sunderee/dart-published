@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 /// Collection of extensions on Material [Widget].
@@ -218,6 +219,37 @@ extension WidgetExtensions on Widget {
       onFocusChange: onFocusChange,
       autofocus: autofocus,
       statesController: statesController,
+      child: this,
+    );
+  }
+
+  /// Wrap a widget in [SingleChildScrollView].
+  SingleChildScrollView singleChildScrollView({
+    Key? key,
+    Axis scrollDirection = Axis.vertical,
+    bool reverse = false,
+    EdgeInsetsGeometry? padding,
+    bool? primary,
+    ScrollPhysics? physics,
+    ScrollController? controller,
+    DragStartBehavior dragStartBehavior = DragStartBehavior.start,
+    Clip clipBehavior = Clip.hardEdge,
+    String? restorationId,
+    ScrollViewKeyboardDismissBehavior keyboardDismissBehavior =
+        ScrollViewKeyboardDismissBehavior.manual,
+  }) {
+    return SingleChildScrollView(
+      key: key,
+      scrollDirection: scrollDirection,
+      reverse: reverse,
+      padding: padding,
+      primary: primary,
+      physics: physics,
+      controller: controller,
+      dragStartBehavior: dragStartBehavior,
+      clipBehavior: clipBehavior,
+      restorationId: restorationId,
+      keyboardDismissBehavior: keyboardDismissBehavior,
       child: this,
     );
   }

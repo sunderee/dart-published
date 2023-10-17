@@ -11,3 +11,7 @@
 
 - Add `ClipRect`, `ClipRRect`, `ClipOval`, `ClipPath` extensions.
 - Add `InkWell` extension.
+
+## 0.0.4
+
+- Add `SingleChildScrollView` extension.
