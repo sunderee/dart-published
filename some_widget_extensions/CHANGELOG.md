@@ -15,3 +15,7 @@
 ## 0.0.4
 
 - Add `SingleChildScrollView` extension.
+
+## 0.0.5
+
+- Add `Card` extension.
