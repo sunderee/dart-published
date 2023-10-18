@@ -19,3 +19,7 @@
 ## 0.0.5
 
 - Add `Card` extension.
+
+## 0.0.6
+
+- Add `Align` extension.

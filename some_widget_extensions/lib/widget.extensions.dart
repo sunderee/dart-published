@@ -280,4 +280,20 @@ extension WidgetExtensions on Widget {
       child: this,
     );
   }
+
+  /// Wrap a widget in [Align].
+  Align align({
+    Key? key,
+    AlignmentGeometry alignment = Alignment.center,
+    double? widthFactor,
+    double? heightFactor,
+  }) {
+    return Align(
+      key: key,
+      alignment: alignment,
+      widthFactor: widthFactor,
+      heightFactor: heightFactor,
+      child: this,
+    );
+  }
 }
