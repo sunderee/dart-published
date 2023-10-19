@@ -73,5 +73,10 @@
 
 ## 2.1.0
 
-- Regress `collection` and `meta` package versions to support use in current stable Flutter versions
-- Minor cleanups in the library itself
+- Regress `collection` and `meta` package versions to support use in current stable Flutter versions.
+- Minor cleanups in the library itself.
+
+## 2.1.1
+
+- Bump SDK version constraint.
+- Bump dependencies to latest.

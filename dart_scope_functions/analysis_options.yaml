@@ -55,6 +55,7 @@ analyzer:
     # always_require_non_null_named_parameters: error
     # always_specify_types: error
     annotate_overrides: error
+    # annotate_redeclares: error
     # avoid_annotating_with_dynamic: error
     # avoid_as: error
     # avoid_bool_literals_in_conditional_expressions: error
@@ -375,6 +376,9 @@ linter:
 
     # Annotate overridden members.
     - annotate_overrides
+
+    # Annotate redeclared members.
+    # - annotate_redeclares
 
     # Avoid annotating with dynamic when not required.
     # - avoid_annotating_with_dynamic

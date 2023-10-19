@@ -20,12 +20,12 @@
 
 ## 0.0.6
 
-- GitHub repository cleanup
-- Regenerate `analysis_options.yaml` file
+- GitHub repository cleanup.
+- Regenerate `analysis_options.yaml` file.
 
 ## 0.0.7
 
-- Dart 3 ready: new `analysis_options.yaml` file + bumped Dart SDK constraints
+- Dart 3 ready: new `analysis_options.yaml` file + bumped Dart SDK constraints.
 
 ## 0.0.8
 
@@ -37,16 +37,21 @@
 
 ## 0.1.1
 
-- Bump SDK version constraint
-- Bump dependencies to latest
-- Add topics to `pubspec.yaml`
+- Bump SDK version constraint.
+- Bump dependencies to latest.
+- Add topics to `pubspec.yaml`.
 
 ## 0.1.2
 
-- Bump SDK version constraint
-- Bump dependencies to latest
+- Bump SDK version constraint.
+- Bump dependencies to latest.
 - Create a new extension method `letWithElse` that can be used on nullable types.
 
 ## 0.1.3
 
 - Create a new extension method `withDefault`.
+
+## 0.1.4
+
+- Bump SDK version constraint.
+- Bump dependencies to latest.
