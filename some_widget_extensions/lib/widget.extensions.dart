@@ -296,4 +296,18 @@ extension WidgetExtensions on Widget {
       child: this,
     );
   }
+
+  /// Wrap a widget in [Center].
+  Center center({
+    Key? key,
+    double? widthFactor,
+    double? heightFactor,
+  }) {
+    return Center(
+      key: key,
+      widthFactor: widthFactor,
+      heightFactor: heightFactor,
+      child: this,
+    );
+  }
 }
