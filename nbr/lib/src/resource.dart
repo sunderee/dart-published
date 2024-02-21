@@ -1,5 +1,4 @@
-import 'package:meta/meta.dart';
-import 'package:nbr/src/equatable.dart';
+import 'package:equatable/equatable.dart';
 
 /// Enum representing different states in which a resource can be in.
 enum ResourceStatus { empty, loading, success, failed }
@@ -7,7 +6,6 @@ enum ResourceStatus { empty, loading, success, failed }
 /// Immutable class representing a resource that can be in one of four states:
 /// `empty`, `loading`, `success`, or `failed`. It is designed to help manage
 /// and represent the state of a resource in a clean and consistent way.
-@immutable
 final class Resource<T> extends Equatable {
   /// The status of the resource.
   final ResourceStatus status;

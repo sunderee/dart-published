@@ -80,3 +80,10 @@
 
 - Bump SDK version constraint.
 - Bump dependencies to latest.
+
+## 2.1.2
+
+- Remove `meta` and `collection` in favor of `equatable`.
+- Bump SDK version constraint.
+- Bump dependencies to latest.
+- Regenerate `analysis_options.yaml` file.

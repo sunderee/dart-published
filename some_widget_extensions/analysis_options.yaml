@@ -8,6 +8,8 @@ analyzer:
     strict-raw-types: true
 
   errors:
+    # lints: error
+    # flutter_lints: error
     # always_use_package_imports: error
     # avoid_dynamic_calls: error
     avoid_empty_else: error
@@ -17,6 +19,7 @@ analyzer:
     # avoid_slow_async_io: error
     # avoid_type_to_string: error
     avoid_types_as_parameter_names: error
+    # avoid_unstable_final_fields: error
     avoid_web_libraries_in_flutter: error
     # cancel_subscriptions: error
     # close_sinks: error
@@ -40,13 +43,13 @@ analyzer:
     # no_self_assignments: error
     # no_wildcard_variable_uses: error
     # prefer_relative_imports: error
-    prefer_void_to_null: error
+    # prefer_void_to_null: error
     # test_types_in_equals: error
     # throw_in_finally: error
     # unnecessary_statements: error
     unrelated_type_equality_checks: error
     # unsafe_html: error
-    # use_build_context_synchronously: error
+    use_build_context_synchronously: error
     use_key_in_widget_constructors: error
     valid_regexps: error
     # always_declare_return_types: error
@@ -97,7 +100,7 @@ analyzer:
     # conditional_uri_does_not_exist: error
     constant_identifier_names: error
     curly_braces_in_flow_control_structures: error
-    # dangling_library_doc_comments: error
+    dangling_library_doc_comments: error
     # deprecated_consistency: error
     # directives_ordering: error
     # do_not_use_environment: error
@@ -184,7 +187,7 @@ analyzer:
     # tighten_type_of_initializing_formals: error
     # type_annotate_public_apis: error
     type_init_formals: error
-    # type_literal_in_constant_pattern: error
+    type_literal_in_constant_pattern: error
     # unawaited_futures: error
     # unnecessary_await_in_return: error
     unnecessary_brace_in_string_interps: error
@@ -208,7 +211,7 @@ analyzer:
     unnecessary_string_escapes: error
     unnecessary_string_interpolations: error
     unnecessary_this: error
-    # unnecessary_to_list_in_spreads: error
+    unnecessary_to_list_in_spreads: error
     # unreachable_from_main: error
     # use_colored_box: error
     # use_decorated_box: error
@@ -230,19 +233,25 @@ analyzer:
     void_checks: error
     depend_on_referenced_packages: error
     package_names: error
-    # secure_pubspec_urls: error
+    secure_pubspec_urls: error
     # sort_pub_dependencies: error
 
 linter:
   rules:
 
+    # 
+    # - lints
+
+    # 
+    # - flutter_lints
+
     # Avoid relative imports for files in lib/.
     # - always_use_package_imports
 
-    # Avoid method calls or property accesses on a “dynamic” target.
+    # Avoid method calls or property accesses on a "dynamic" target.
     # - avoid_dynamic_calls
 
-    # Avoid empty else statements.
+    # Avoid empty statements in else clauses.
     - avoid_empty_else
 
     # Avoid print calls in production code.
@@ -257,11 +266,14 @@ linter:
     # Avoid slow async dart:io methods.
     # - avoid_slow_async_io
 
-    # Avoid .toString() in production code since results may be minified.
+    # Avoid.toString() in production code since results may be minified.
     # - avoid_type_to_string
 
     # Avoid types as parameter names.
     - avoid_types_as_parameter_names
+
+    # Avoid overriding a final field to return different values if called multiple times.
+    # - avoid_unstable_final_fields
 
     # Avoid using web-only libraries outside Flutter web plugin packages.
     - avoid_web_libraries_in_flutter
@@ -287,7 +299,7 @@ linter:
     # DO reference all public properties in debug methods.
     # - diagnostic_describe_all_properties
 
-    # Don’t invoke asynchronous functions in non-async blocks.
+    # Don't invoke asynchronous functions in non-async blocks.
     # - discarded_futures
 
     # Avoid empty statements.
@@ -296,7 +308,7 @@ linter:
     # Always override hashCode if overriding ==.
     - hash_and_equals
 
-    # Don’t implicitly reopen classes.
+    # Don't implicitly reopen classes.
     # - implicit_reopen
 
     # Use case expressions that are valid in Dart 3.0.
@@ -314,26 +326,26 @@ linter:
     # Boolean expression composed only with literals.
     # - literal_only_boolean_expressions
 
-    # Don’t use adjacent strings in list.
+    # Don't use adjacent strings in list.
     # - no_adjacent_strings_in_list
 
-    # Don’t use more than one case with same value.
+    # Don't use more than one case with same value.
     - no_duplicate_case_values
 
-    # Don’t put any logic in createState.
+    # Don't put any logic in createState.
     - no_logic_in_create_state
 
-    # Don’t assign a variable to itself.
+    # Don't assign a variable to itself.
     # - no_self_assignments
 
-    # Don’t use wildcard parameters or variables.
+    # Don't use wildcard parameters or variables.
     # - no_wildcard_variable_uses
 
     # Prefer relative imports for files in lib/.
     # - prefer_relative_imports
 
-    # Don’t use the Null type, unless you are positive that you don’t want void.
-    - prefer_void_to_null
+    # Don't use the Null type, unless you are positive that you don't want void.
+    # - prefer_void_to_null
 
     # Test type arguments in operator ==(Object other).
     # - test_types_in_equals
@@ -351,7 +363,7 @@ linter:
     # - unsafe_html
 
     # Do not use BuildContexts across async gaps.
-    # - use_build_context_synchronously
+    - use_build_context_synchronously
 
     # Use key in widget constructors.
     - use_key_in_widget_constructors
@@ -392,7 +404,7 @@ linter:
     # Avoid catches without on clauses.
     # - avoid_catches_without_on_clauses
 
-    # Don’t explicitly catch Error or types that implement it.
+    # Don't explicitly catch Error or types that implement it.
     # - avoid_catching_errors
 
     # Avoid defining a class that contains only static members.
@@ -416,19 +428,19 @@ linter:
     # Avoid using forEach with a function literal.
     - avoid_function_literals_in_foreach_calls
 
-    # Don’t implement classes that override ==.
+    # Don't implement classes that override ==.
     # - avoid_implementing_value_types
 
-    # Don’t explicitly initialize variables to null.
+    # Don't explicitly initialize variables to null.
     - avoid_init_to_null
 
     # Avoid JavaScript rounded ints.
     # - avoid_js_rounded_ints
 
-    # Don’t declare multiple variables on a single line.
+    # Don't declare multiple variables on a single line.
     # - avoid_multiple_declarations_per_line
 
-    # Don’t check for null in custom == operators.
+    # Don't check for null in custom == operators.
     - avoid_null_checks_in_equality_operators
 
     # Avoid positional boolean parameters.
@@ -440,7 +452,7 @@ linter:
     # Avoid redundant argument values.
     # - avoid_redundant_argument_values
 
-    # Don’t rename parameters of overridden methods.
+    # Don't rename parameters of overridden methods.
     - avoid_renaming_method_parameters
 
     # Avoid return types on setters.
@@ -488,7 +500,7 @@ linter:
     # Cascade consecutive method invocations on the same reference.
     # - cascade_invocations
 
-    # Don’t cast a nullable value to a non nullable type.
+    # Don't cast a nullable value to a non nullable type.
     # - cast_nullable_to_non_nullable
 
     # Sort combinator names alphabetically.
@@ -504,7 +516,7 @@ linter:
     - curly_braces_in_flow_control_structures
 
     # Attach library doc comments to library directives.
-    # - dangling_library_doc_comments
+    - dangling_library_doc_comments
 
     # Missing deprecated annotation.
     # - deprecated_consistency
@@ -536,7 +548,7 @@ linter:
     # Use Flutter TODO format: // TODO(username): message, https://URL-to-issue.
     # - flutter_style_todos
 
-    # Don’t import implementation files from another package.
+    # Don't import implementation files from another package.
     - implementation_imports
 
     # Explicitly tear-off call methods when using an object as a Function.
@@ -575,7 +587,7 @@ linter:
     # Avoid leading underscores for local identifiers.
     - no_leading_underscores_for_local_identifiers
 
-    # Don’t compare booleans to boolean literals.
+    # Don't compare booleans to boolean literals.
     # - no_literal_bool_comparisons
 
     # Name non-constant identifiers using lowerCamelCase.
@@ -584,7 +596,7 @@ linter:
     # Noop primitive operations.
     # - noop_primitive_operations
 
-    # Don’t use null check on a potentially nullable type parameter.
+    # Don't use null check on a potentially nullable type parameter.
     - null_check_on_nullable_type_parameter
 
     # Do not pass null as an argument where a closure is expected.
@@ -599,7 +611,7 @@ linter:
     # Only throw instances of classes extending either Exception or Error.
     # - only_throw_errors
 
-    # Don’t override fields.
+    # Don't override fields.
     - overridden_fields
 
     # Provide doc comments for all public APIs.
@@ -608,7 +620,7 @@ linter:
     # Prefix library names with the package name and a dot-separated path.
     - package_prefixed_library_names
 
-    # Don’t reassign references to parameters of functions or methods.
+    # Don't reassign references to parameters of functions or methods.
     # - parameter_assignments
 
     # Use adjacent strings to concatenate string literals.
@@ -647,7 +659,7 @@ linter:
     # Use contains for List and String instances.
     - prefer_contains
 
-    # Prefer double quotes where they won’t require escape sequences.
+    # Prefer double quotes where they won't require escape sequences.
     # - prefer_double_quotes
 
     # Use = to separate a named parameter from its default value.
@@ -722,7 +734,7 @@ linter:
     # Prefer typing uninitialized variables and fields.
     - prefer_typing_uninitialized_variables
 
-    # Provide a deprecation message, via @Deprecated(“message”).
+    # Provide a deprecation message, via @Deprecated("message").
     - provide_deprecation_message
 
     # Document all public members.
@@ -761,11 +773,11 @@ linter:
     # Type annotate public APIs.
     # - type_annotate_public_apis
 
-    # Don’t type annotate initializing formals.
+    # Don't type annotate initializing formals.
     - type_init_formals
 
-    # Don’t use constant patterns with type literals.
-    # - type_literal_in_constant_pattern
+    # Don't use constant patterns with type literals.
+    - type_literal_in_constant_pattern
 
     # Future results in async function bodies must be awaited or marked unawaited using dart:async.
     # - unawaited_futures
@@ -776,7 +788,7 @@ linter:
     # Avoid using braces in interpolation when not needed.
     - unnecessary_brace_in_string_interps
 
-    # Don’t use explicit breaks when a break is implied.
+    # Don't use explicit breaks when a break is implied.
     # - unnecessary_breaks
 
     # Avoid const keyword.
@@ -785,16 +797,16 @@ linter:
     # Unnecessary .new constructor name.
     - unnecessary_constructor_name
 
-    # Don’t use final for local variables.
+    # Don't use final for local variables.
     # - unnecessary_final
 
-    # Avoid wrapping fields in getters and setters just to be “safe”.
+    # Avoid wrapping fields in getters and setters just to be "safe".
     - unnecessary_getters_setters
 
-    # Don’t create a lambda when a tear-off will do.
+    # Don't create a lambda when a tear-off will do.
     # - unnecessary_lambdas
 
-    # Don’t specify the late modifier when it is not needed.
+    # Don't specify the late modifier when it is not needed.
     - unnecessary_late
 
     # Avoid library directives unless they have documentation comments or annotations.
@@ -818,7 +830,7 @@ linter:
     # Use a non-nullable type for a final variable initialized with a non-nullable value.
     - unnecessary_nullable_for_final_variable_declarations
 
-    # Don’t override a method to do a super method invocation with the same parameters.
+    # Don't override a method to do a super method invocation with the same parameters.
     - unnecessary_overrides
 
     # Unnecessary parentheses can be removed.
@@ -833,11 +845,11 @@ linter:
     # Unnecessary string interpolation.
     - unnecessary_string_interpolations
 
-    # Don’t access members with this unless avoiding shadowing.
+    # Don't access members with this unless avoiding shadowing.
     - unnecessary_this
 
     # Unnecessary toList() in spreads.
-    # - unnecessary_to_list_in_spreads
+    - unnecessary_to_list_in_spreads
 
     # Unreachable top-level members in executable libraries.
     # - unreachable_from_main
@@ -893,7 +905,7 @@ linter:
     # Start the name of the method with to/_to or as/_as if applicable.
     # - use_to_and_as_if_applicable
 
-    # Don’t assign to void.
+    # Don't assign to void.
     - void_checks
 
     # Depend on referenced packages.
@@ -903,7 +915,7 @@ linter:
     - package_names
 
     # Use secure urls in pubspec.yaml.
-    # - secure_pubspec_urls
+    - secure_pubspec_urls
 
     # Sort pub dependencies alphabetically.
     # - sort_pub_dependencies

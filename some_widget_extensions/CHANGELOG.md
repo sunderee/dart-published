@@ -27,3 +27,10 @@
 ## 0.0.7
 
 - Add `Center` extension.
+
+## 0.0.8
+
+- Add `Positioned` extension.
+- Bump SDK version constraint.
+- Bump dependencies to latest.
+- Regenerate `analysis_options.yaml` file.

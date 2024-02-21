@@ -15,12 +15,12 @@ ANALYSIS_GEN_EXECUTABLE="/path/to/analysis-gen/executable";
 for dir in */; do
     cd "$dir" || exit;
     if grep -q "flutter:" pubspec.yaml; then
-        "$ANALYSIS_GEN_EXECUTABLE" --path="$(pwd)" --rule-set=flutter;
-        "$PUBY_EXECUTABLE" --path="$(pwd)/pubspec.yaml" --sdk=beta --flutter --write
+        "$ANALYSIS_GEN_EXECUTABLE" --path="$(pwd)/analysis_options.yaml" --style=flutter;
+        "$PUBY_EXECUTABLE" --path="$(pwd)/pubspec.yaml" --flutter --write
         flutter clean && flutter pub get;
     else
-        "$ANALYSIS_GEN_EXECUTABLE" --path="$(pwd)" --rule-set=recommended;
-        "$PUBY_EXECUTABLE" --path="$(pwd)/pubspec.yaml" --sdk=beta --write
+        "$ANALYSIS_GEN_EXECUTABLE" --path="$(pwd)/analysis_options.yaml" --style=recommended;
+        "$PUBY_EXECUTABLE" --path="$(pwd)/pubspec.yaml" --write
         dart pub get;
     fi
 

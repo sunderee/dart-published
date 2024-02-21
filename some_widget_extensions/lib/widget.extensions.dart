@@ -297,6 +297,28 @@ extension WidgetExtensions on Widget {
     );
   }
 
+  /// Wrap a widget in [Positioned].
+  Positioned positioned({
+    Key? key,
+    double? left,
+    double? top,
+    double? right,
+    double? bottom,
+    double? width,
+    double? height,
+  }) {
+    return Positioned(
+      key: key,
+      left: left,
+      top: top,
+      right: right,
+      bottom: bottom,
+      width: width,
+      height: height,
+      child: this,
+    );
+  }
+
   /// Wrap a widget in [Center].
   Center center({
     Key? key,
