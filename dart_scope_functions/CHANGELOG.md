@@ -61,3 +61,9 @@
 - Bump SDK version constraint.
 - Bump dependencies to latest.
 - Regenerate `analysis_options.yaml` file.
+
+## 0.1.6
+
+- Bump SDK version constraint.
+- Bump dependencies to latest.
+- Regenerate `analysis_options.yaml` file.

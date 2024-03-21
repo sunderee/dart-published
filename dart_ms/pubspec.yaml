@@ -1,10 +1,10 @@
 name: dart_ms
 description: Millisecond conversion utility function inspired by ms (https://www.npmjs.com/package/ms)
-version: 0.0.8
+version: 0.0.9
 repository: https://github.com/sunderee/dart-published/tree/master/dart_ms
 
 environment:
-  sdk: ">=3.3.0 <4.0.0"
+  sdk: ">=3.3.1 <4.0.0"
 
 topics:
   - ms

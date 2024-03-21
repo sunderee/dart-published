@@ -34,3 +34,10 @@
 - Bump SDK version constraint.
 - Bump dependencies to latest.
 - Regenerate `analysis_options.yaml` file.
+
+## 0.0.9
+
+- Add `ListView` extension.
+- Bump SDK version constraint.
+- Bump dependencies to latest.
+- Regenerate `analysis_options.yaml` file.

@@ -1,4 +1,6 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 /// Extensions that can be used on lists of Material [Widget].
 extension WidgetListExtensions on List<Widget> {
@@ -85,6 +87,53 @@ extension WidgetListExtensions on List<Widget> {
       textDirection: textDirection,
       verticalDirection: verticalDirection,
       textBaseline: textBaseline,
+      clipBehavior: clipBehavior,
+      children: this,
+    );
+  }
+
+  /// Wrap a list of widgets into a [ListView].
+  ListView listView({
+    Key? key,
+    Axis scrollDirection = Axis.vertical,
+    bool reverse = false,
+    ScrollController? controller,
+    bool? primary,
+    ScrollPhysics? physics,
+    bool shrinkWrap = false,
+    EdgeInsetsGeometry? padding,
+    double? itemExtent,
+    double? Function(int, SliverLayoutDimensions)? itemExtentBuilder,
+    Widget? prototypeItem,
+    bool addAutomaticKeepAlives = true,
+    bool addRepaintBoundaries = true,
+    bool addSemanticIndexes = true,
+    double? cacheExtent,
+    int? semanticChildCount,
+    DragStartBehavior dragStartBehavior = DragStartBehavior.start,
+    ScrollViewKeyboardDismissBehavior keyboardDismissBehavior =
+        ScrollViewKeyboardDismissBehavior.manual,
+    String? restorationId,
+    Clip clipBehavior = Clip.hardEdge,
+  }) {
+    return ListView(
+      key: key,
+      scrollDirection: scrollDirection,
+      reverse: reverse,
+      controller: controller,
+      primary: primary,
+      physics: physics,
+      shrinkWrap: shrinkWrap,
+      padding: padding,
+      itemExtent: itemExtent,
+      itemExtentBuilder: itemExtentBuilder,
+      prototypeItem: prototypeItem,
+      addAutomaticKeepAlives: addAutomaticKeepAlives,
+      addRepaintBoundaries: addRepaintBoundaries,
+      addSemanticIndexes: addSemanticIndexes,
+      dragStartBehavior: dragStartBehavior,
+      keyboardDismissBehavior: keyboardDismissBehavior,
+      restorationId: restorationId,
       clipBehavior: clipBehavior,
       children: this,
     );
