@@ -41,3 +41,7 @@
 - Bump SDK version constraint.
 - Bump dependencies to latest.
 - Regenerate `analysis_options.yaml` file.
+
+## 0.0.10
+
+- Bug fixes related to a wrong return type of `itemExtentBuilder` in the `ListView` extension.

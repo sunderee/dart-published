@@ -103,7 +103,7 @@ extension WidgetListExtensions on List<Widget> {
     bool shrinkWrap = false,
     EdgeInsetsGeometry? padding,
     double? itemExtent,
-    double? Function(int, SliverLayoutDimensions)? itemExtentBuilder,
+    double Function(int, SliverLayoutDimensions)? itemExtentBuilder,
     Widget? prototypeItem,
     bool addAutomaticKeepAlives = true,
     bool addRepaintBoundaries = true,
